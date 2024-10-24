@@ -1,0 +1,708 @@
+/*---fonts----*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1e1c1c;
+    color: whitesmoke;
+}
+
+html {  
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 25px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #bbb;
+}
+
+.container {
+    width: 100%;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    background-color: transparent;
+    padding: 0 50px;
+    line-height: 90px;
+    width: 100%;
+    height: 90px;
+    padding-inline: 9vw;
+    transition: .3s;
+    z-index: 100%;
+}
+
+nav.shadow {
+    background-color: rgba(30, 30, 30, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav_items {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo {
+    position: relative;
+    
+}
+
+.nav-name {
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(231, 43, 43);
+}
+
+.nav-logo span {
+    position: absolute;
+    top: -15px;
+    right:-20px;
+    font-size: 5em;
+    color:rgb(226, 224, 224);
+}
+
+.nav-menu, .nav_menu_list {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu .nav-list .nav_menu_list {
+    list-style: none;
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: 500;
+    padding-inline: 15px;
+    margin-inline: 20px;
+    position: relative;
+    transition: color 0.3s;
+    
+}
+
+.nav-link:hover {
+    color: red; 
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    background-color: red;
+    left: 0;
+    bottom: -10px;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-menu-btn i {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+.profile {
+    width: 66px;
+    height: 62px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+}
+
+.profile-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.login {
+    font-weight: 500;
+    padding: 12px 20px;
+    background: #efefef;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color .4s, color .4s;
+}
+
+.login:hover {
+    background: red;
+    color: white;
+}
+
+.hamburger {
+    display: none; /* Hidden on large screens */
+    font-size: 28px;
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+@media (max-width: 1024px) {
+    .hamburger{
+        display: block;
+    }
+
+    nav {
+        padding: 0 30px;
+        height: 80px;
+    }
+
+    .nav-name {
+        font-size: 26px;
+    }
+
+    .nav-logo span {
+        font-size: 4em;
+        top: -10px;
+        right: -20px;
+    }
+
+    .nav-link {
+        padding-inline: 15px;
+        margin-inline: 15px;
+    }
+
+    .login {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 950px) {
+    /* Hide the menu and show hamburger icon */
+
+
+    .hamburger {
+        display: block;
+        margin-left: auto;
+        margin-right: 10px; /* Position the hamburger to the right */
+    }
+
+    /* Fix layout issues */
+    nav {
+        padding: 0 20px;
+        height: auto;
+    }
+
+    .nav-logo span {
+        font-size: 4em;
+    }
+}
+
+@media (max-width: 300px) {
+    .nav-menu{
+        display: none;
+    }
+    .nav-name {
+        font-size: 20px;
+    }
+
+    .hamburger {
+        font-size: 2em;
+    }
+
+    .login {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
+
+/* Show the menu when hamburger is clicked */
+.show-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(30, 30, 30, 0.9);
+    position: absolute;
+    top: 90px;
+    width: 100%;
+    left: 0;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.show-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(30, 30, 30, 0.9);
+    position: absolute;
+    top: 90px;
+    width: 100%;
+    left: 0;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.close {
+    color: #9f0707;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+label {
+    color: black; 
+    font-weight: bold;
+}
+
+/* Input fields */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit button */
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color .3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+.intro-me {
+    width: 800px;
+    height: 1000px;
+    margin-top: -20px;
+    justify-content: center;
+    margin-left: -110px;
+
+}
+
+.title h1{
+    text-decoration: none;
+    text-align: right;
+    font-size: 40px;
+    margin-top: -700px;
+    margin-right: 205px;
+    padding-bottom: 20%;
+    
+}
+
+.title p {
+    text-align: right;
+    font-size: 20px;
+    margin-top: -270px;
+    margin-right: 65px;
+}
+
+.start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    margin-left: 60px;
+}
+
+.btn-start {
+    padding: 10px 20px;
+    background-color: #f00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 25px;
+    font-style: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-start:hover {
+    background-color: #c00;
+}
+
+.butterfly{
+    text-align:center;
+    font-size: 70px;
+    margin-top: 350px;
+}
+
+.material {
+    text-align: center;
+    padding-top: 0%;
+    margin-bottom: 100px;
+    color: #fffcfc;
+}
+
+.materials-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+    margin-top: 20px;
+    color: #1e1c1c;
+}
+
+.material-box {
+    background-color: #f0f0f0;
+    width: 220px;
+    height: 310px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative; 
+    overflow: hidden;
+}
+
+.material-box:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.material-image {
+    width: 100%; 
+    height: auto; 
+    border-radius: 10px 10px 0 0; 
+}
+
+.material-title {
+    margin: 10px 0;
+}
+
+.download-button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #0056b3; 
+}
+
+
+.tpb {
+    background-color: rgb(248, 248, 207);
+    width: 880px;
+    height: 200px;
+    margin-left: 290px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    color: #1e1c1c;
+    padding: 20px; 
+    text-align: center; 
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.4); 
+}
+
+.tpb h1 {
+    text-align: right;
+    padding-bottom: 1%;
+}
+
+.tpb p {
+    text-align: right;
+    font-size: 20px;
+}
+
+.tpb:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(255, 0, 0, 0.6); 
+}
+
+.english {
+    background-color: rgb(207, 248, 237);
+    width: 880px;
+    height: 200px;
+    margin-left: 290px;
+    margin-bottom: 60px;
+    border-radius: 10px;
+    color: #1e1c1c;
+    padding: 20px; 
+    text-align: center; 
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.4); 
+}
+
+.english h1 {
+    text-align: left;
+    padding-bottom: 1%;
+}
+
+.english p {
+    text-align: left;
+    font-size: 20px;
+}
+
+.english:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(255, 0, 0, 0.6); 
+}
+
+.quiz-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.quiz-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.quit {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.quit:hover, .quit:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.quiz{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.quiz h1 {
+    padding-top: 10%;
+    font-size: 50px;
+    line-height: 1.2;
+}
+
+.idea {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 60vh;
+   padding: 10px;
+}
+
+.idea img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    max-height: 400px;
+}
+.past-tense {
+    justify-content: center;
+}
+
+.question-box {
+    justify-content: center;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 10%;
+}
+
+.choices ul, .choices2, .choices3, .choices4, .choices5 ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.pilihan, .pilihan2, .pilihan3, .pilihan4, .pilihan5 {
+    list-style: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    border-radius: 5px;
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pilihan:hover, .pilihan2:hover {
+    background-color: red; 
+    transform: scale(1.025);
+}
+
+.correct {
+    background-color: lightgreen !important;
+    color: white;
+}
+
+.wrong {
+    background-color: white !important;
+    color: red !important;
+}
+
+.notification {
+    display: none;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+.fruit {
+    padding-top: 5%;
+    margin-top: 10px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+    .question-box {
+        padding: 15px;
+        font-size: 14px; /* Reduce font size on smaller screens */
+    }
+
+    .question {
+        font-size: 16px;
+    }
+
+    .choices label {
+        font-size: 14px;
+    }
+
+    .submit {
+        font-size: 14px;
+        padding: 10px 15px; /* Reduce button size on smaller screens */
+    }
+
+    .result {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .quiz h1 {
+        font-size: 36px; /* Reduce font size for smaller screens */
+        padding-top: 5%; /* Reduce padding on smaller screens */
+    }
+
+    .idea {
+        height: auto; /* Let content flow naturally on small screens */
+    }
+
+    .idea img {
+        max-height: 300px; /* Scale image for smaller screens */
+        width: 100%; /* Ensure the image takes up the available width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* Media query for smaller mobile screens (less than 480px) */
+@media screen and (max-width: 480px) {
+    .quiz h1 {
+        font-size: 28px; /* Further reduce font size on very small screens */
+        padding-top: 5%; /* Adjust padding */
+    }
+
+    .idea img {
+        max-height: 200px; /* Limit image size further for smaller mobile screens */
+    }
+}
+
+
+
+

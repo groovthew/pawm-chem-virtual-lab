@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn With Mickey!</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+
+<body>
+    <div class="container"> 
+        <nav id="header">
+            <div class="nav-logo">
+                <p class="nav-name">Matty's</p>
+                <span>.</span>
+            </div>
+            <div class="hamburger">☰</div>
+            <div class="nav_items">
+                <div class="nav_menu" id="myNavMenu">
+                    <ul class="nav_menu_list">
+                        <li class="nav_list">
+                            <a href="index.html" class="nav-link">Home</a>
+                            <div class="circle"></div>
+                        </li>
+                        <li class="nav_list">
+                            <a href="material.html" class="nav-link">Material</a>
+                            <div class="circle"></div>
+                        </li>
+                        <li class="nav_list">
+                            <a href="quiz.html" class="nav-link">Quiz</a>
+                            <div class="circle"></div>
+                        </li>         
+                    </ul>
+                </div>
+                <div class="nav-button" id="navButton">
+                    <button class="login" onclick="showLoginForm()">Login</button>
+                </div>
+                <div id="loginModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeLoginForm()">&times;</span>
+                        <h2>Login</h2>
+                        <form id="loginForm" onsubmit="handleLogin(event)">
+                            <label for="username">Username:</label><br>
+                            <input type="text" id="username" name="username" required><br><br>
+                            <label for="password">Password:</label><br>
+                            <input type="password" id="password" name="password" required><br><br>
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
+                </div>
+            <div class="nav-menu-btn">
+                <i class="uis uis-bars" onclick="myMenuFunction()"></i>
+            </div>
+            <div class="profile">
+                <img src="assets/account_circle.png" alt="Profile" class="profile-logo"> 
+            </div>
+        </nav>
+    </div>
+
+    <div class="intro">
+        <img src="assets/me1.png" alt="Intro1" class="intro-me">
+        <div class="title">
+            <h1>Let's Learn With Mattheuw!</h1>
+            <p>Hi, I'm Matt and I'm gonna guide you to be a native english speaker 🤟🏻</p>
+        </div>
+        
+        <div class="start">
+            <button class="btn-start">Get Start!</button>
+        </div>
+    </div>
+
+    <div class="butterfly">
+        <h1>🦋 📚</h1>
+    </div>
+
+    <div class="tpb">
+        <h1>Worry about your study in TPB 🧐?</h1>
+        <p>This platform is here to provide you anything that you need and helps you study during TPB. TPB is the first year orientation program that helds by ITB to prepare all the freshman students in ITB.</p>
+    </div>
+
+    <div class="english">
+        <h1>English in TPB 📖</h1>
+        <p>Our English Lessons will teach you everything about the english course curriculum in TPB. Especially for you who can start from the basic, such as grammar, verb, summary, and et cetera.</p>
+    </div>
+    <div class="material">
+        <h1>Choose Your Material!</h1>
+        <div class="materials-container">
+            <div class="material-box">
+                <img src="assets/english1.png" alt="Basic Material" class="material-image">
+                <div class="material-title">Basic</div>
+                <button class="download-button" data-file="assets/ielts.pdf">Download</button>
+            </div>
+            <div class="material-box">
+                <img src="assets/english1.png" alt="Mid-Basic Material" class="material-image">
+                <div class="material-title">Mid-Basic</div>
+                <button class="download-button" data-file="assets/ielts.pdf">Download</button>
+            </div>
+            <div class="material-box">
+                <img src="assets/english1.png" alt="Advance Material" class="material-image">
+                <div class="material-title">Advance</div>
+                <button class="download-button" data-file="assets/ielts.pdf">Download</button>
+            </div>
+            <div class="material-box">
+                <img src="assets/english1.png" alt="Super Advance Material" class="material-image">
+                <div class="material-title">Super Advance</div>
+                <button class="download-button" data-file="assets/ielts.pdf">Download</button>
+            </div>
+        </div>
+    </div>    
+
+    <!-- Quiz Modal -->
+
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

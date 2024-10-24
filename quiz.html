@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn With Mickey!</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+
+<body>
+    <div class="container"> 
+        <nav id="header">
+            <div class="nav-logo">
+                <p class="nav-name">Matty's</p>
+                <span>.</span>
+            </div>
+            <div class="nav_items">
+                <div class="nav_menu" id="myNavMenu">
+                    <ul class="nav_menu_list">
+                        <li class="nav_list">
+                            <a href="index.html" class="nav-link">Home</a>
+                            <div class="circle"></div>
+                        </li>
+                        <li class="nav_list">
+                            <a href="material.html" class="nav-link">Material</a>
+                            <div class="circle"></div>
+                        </li>
+                        <li class="nav_list">
+                            <a href="quiz.html" class="nav-link">Quiz</a>
+                            <div class="circle"></div>
+                        </li>    
+                    </ul>
+                </div>
+                <div class="nav-button" id="navButton">
+                    <button class="login" onclick="showLoginForm()">Login</button>
+                </div>
+                <div id="loginModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeLoginForm()">&times;</span>
+                        <h2>Login</h2>
+                        <form id="loginForm" onsubmit="handleLogin(event)">
+                            <label for="username">Username:</label><br>
+                            <input type="text" id="username" name="username" required><br><br>
+                            <label for="password">Password:</label><br>
+                            <input type="password" id="password" name="password" required><br><br>
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
+                </div>
+            <div class="nav-menu-btn">
+                <i class="uis uis-bars" onclick="myMenuFunction()"></i>
+            </div>
+            <div class="profile">
+                <img src="assets/account_circle.png" alt="Profile" class="profile-logo"> 
+            </div>
+        </nav>
+    </div>
+
+    <div class="quiz">
+        <h1>Welcome to Quiz Page</h1>
+    </div>
+
+    <div class="idea">
+        <img src="assets/quiz-1.png">
+    </div>
+
+    <div class="question-box">
+        <div class="past-tense">
+            <h1>What is the past tense of took?</h1>
+        </div>
+        <div class="choices">
+            <ul>
+                <li class="pilihan" onclick="checkAnswer(this)">took</li>
+                <li class="pilihan" onclick="checkAnswer(this)">take</li>
+                <li class="pilihan" onclick="checkAnswer(this)">tooken</li>
+                <li class="pilihan" onclick="checkAnswer(this)">tooked</li>
+            </ul>
+        </div>
+
+        <div class="fruit">
+            <h1>What fruit does have the color red?</h1>
+        </div>
+        <div class="choices2">
+            <ul>
+                <li class="pilihan" onclick="checkAnswer(this)">Apple</li>
+                <li class="pilihan" onclick="checkAnswer(this)">Orange</li>
+                <li class="pilihan" onclick="checkAnswer(this)">Papaya</li>
+                <li class="pilihan" onclick="checkAnswer(this)">Melon</li>
+            </ul>
+        </div>
+
+        <div class="ride">
+            <h1>What is the verb noun of ride?</h1>
+        </div>
+        <div class="choices3">
+            <ul>
+                <li class="pilihan" onclick="checkAnswer(this)">Riden</li>
+                <li class="pilihan" onclick="checkAnswer(this)">Riden</li>
+                <li class="pilihan" onclick="checkAnswer(this)">Rided</li>
+                <li class="pilihan" onclick="checkAnswer(this)">Riding</li>
+            </ul>
+        </div>
+
+        <div class="milk">
+            <h1>We often ____ milk before ____ to school.</h1>
+        </div>
+        <div class="choices4">
+            <ul>
+                <li class="pilihan" onclick="checkAnswer(this)">eat, going</li>
+                <li class="pilihan" onclick="checkAnswer(this)">drink, goes</li>
+                <li class="pilihan" onclick="checkAnswer(this)">eat, goes</li>
+                <li class="pilihan" onclick="checkAnswer(this)">drink, going</li>
+            </ul>
+        </div>
+
+        <div class="mall">
+            <h1>After I went to school, I ___ to go to a ___ with my friends.</h1>
+        </div>
+        <div class="choices5">
+            <ul>
+                <li class="pilihan" onclick="checkAnswer(this)">used, mall</li>
+                <li class="pilihan" onclick="checkAnswer(this)">usually, mall</li>
+                <li class="pilihan" onclick="checkAnswer(this)">drink, home</li>
+                <li class="pilihan" onclick="checkAnswer(this)">used, toilet</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">Correct Answer!</div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/main.js"></script>
+</body>
