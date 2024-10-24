@@ -1,4 +1,4 @@
-const correctAnswer = "take";
+const correctAnswer = ["take", "Apple", "drink, going", "usually, mall"] ;
     let lastSelected = null; // Menyimpan elemen terakhir yang dipilih
 
     // Fungsi untuk memeriksa jawaban ketika elemen diklik

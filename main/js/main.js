@@ -94,12 +94,10 @@ function downloadPDF(filePath) {
     document.body.removeChild(link); 
 }
 
-// Show the quiz modal
 function showQuiz() {
     document.getElementById("quizModal").style.display = "block";
 }
 
-// Close the quiz modal
 function closeQuiz() {
     document.getElementById("quizModal").style.display = "none";
     document.getElementById("quizResult").style.display = "none"; 
