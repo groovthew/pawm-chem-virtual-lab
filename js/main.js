@@ -57,6 +57,13 @@ window.onclick = function(event) {
     }
 }
 
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
 // Handle form submission
 loginForm.onsubmit = function(event) {
     event.preventDefault(); 
@@ -105,13 +112,13 @@ function closeQuiz() {
 
 // Handle quiz form submission
 document.getElementById("quizForm").onsubmit = function(event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault(); 
 
     // Check answers
     let score = 0;
     const answers = {
-        q1: "C", // Correct answer for question 1
-        q2: "B", // Correct answer for question 2
+        q1: "C", 
+        q2: "B", 
     };
 
     for (let question in answers) {
@@ -134,6 +141,6 @@ const hamburger = document.querySelector('.hamburger');
         navMenu.classList.toggle('show-menu');
     });
 
-    
+
 
 

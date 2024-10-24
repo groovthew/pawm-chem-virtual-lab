@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn With Matty!</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+
+<body>
+    <div class="container"> 
+        <nav id="header">
+            <div class="nav-logo">
+                <p class="nav-name">Matty's</p>
+                <span>.</span>
+            </div>
+            <!-- <div class="hamburger">☰</div> -->
+            <div class="nav_items">
+                <div class="nav_menu" id="myNavMenu">
+                    <ul class="nav_menu_list">
+                        <li class="nav_list">
+                            <a href="index.html" class="nav-link">Home</a>
+                            <div class="circle"></div>
+                        </li>
+                        <li class="nav_list">
+                            <a href="material.html" class="nav-link">Material</a>
+                            <div class="circle"></div>
+                        </li>
+                        <li class="nav_list">
+                            <a href="quiz.html" class="nav-link">Quiz</a>
+                            <div class="circle"></div>
+                        </li>         
+                    </ul>
+                </div>
+                <div class="nav-button" id="navButton">
+                    <button class="login" onclick="showLoginForm()">Login</button>
+                </div>
+                <div id="loginModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeLoginForm()">&times;</span>
+                        <h2>Login</h2>
+                        <form id="loginForm" onsubmit="handleLogin(event)">
+                            <label for="username">Username:</label><br>
+                            <input type="text" id="username" name="username" required><br><br>
+                            <label for="password">Password:</label><br>
+                            <input type="password" id="password" name="password" required><br><br>
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
+                </div>
+            <div class="nav-menu-btn">
+                <i class="uis uis-bars" onclick="myMenuFunction()"></i>
+            </div>
+            <div class="profile">
+                <img src="assets/account_circle.png" alt="Profile" class="profile-logo"> 
+            </div>
+        </nav>
+    </div>
+
+    <div class="head-title">
+        <h1>Let's Look at The Material!</h1>
+    </div>
+
+    <div class="chapter-1">
+        <h2>Simple Present Tense</h2>
+        <p>The simple present tense or present tense is one of the most basic tenses in English. We use present tense to talk about something that is currently going on, something that is habitually performed, or a state that generally or currently exists. Examples: <b>Bob <i>drives</i> taxi.</p>
+    </div>
+
+    <div class="chapter-2">
+        <h2>Past Tense</h2>
+        <p>The past tense is used to describe an activity or an event that has happened in the past or a past state of being and needs to include a time marker for when the event or action took place. Examples: <b>Chris <i>ate</i> some pancakes yesterday.</p>
+    </div>
+
+    <div class="chapter-3">
+        <h2>Future Present Tense</h2>
+        <p>The future tense is a verb tense used to describe an event or action that has not yet happened and is expected to happen in the future. Structural formula, Subject + shall/will+ verb (s/es) + object. Examples: <b>He <i>will</i> be here soon.</b></p>
+    </div>
+
+    <div class="chapter-4">
+        <h2>Past Perfect Tense</h2>
+        <p>The past perfect tense is used to describe an event that occurred before a completed action in the past. Formula is Subject + had + verb (ed) + object. Examples: <b>He <i>had gone</i> when she became ill. </p>
+    </div>
+
+    <div class="chapter-5">
+        <h2>Future Continuous Tense</h2>
+        <p>The future continuous tense is used to describe an ongoing action that will occur or occur in the future. Examples: <b>He <i>will be coming</i> to visit us next week.</p>
+    </div>
+
+    <div class="ready">
+        <h1>Great! Let's Take a Simple Quiz To Test Your Knowledge </h1>
+    </div>
+
+    <div class="heart">
+        <img src="assets/heart.png">
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/main.js"></script>
+</body>

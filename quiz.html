@@ -69,14 +69,14 @@
 
     <div class="question-box">
         <div class="past-tense">
-            <h1>What is the past tense of took?</h1>
+            <h1>What is the past tense of take?</h1>
         </div>
         <div class="choices">
             <ul>
-                <li class="pilihan" onclick="checkAnswer(this)">took</li>
+                <li class="pilihan" onclick="checkAnswer(this)">taken</li>
                 <li class="pilihan" onclick="checkAnswer(this)">take</li>
                 <li class="pilihan" onclick="checkAnswer(this)">tooken</li>
-                <li class="pilihan" onclick="checkAnswer(this)">tooked</li>
+                <li class="pilihan" onclick="checkAnswer(this)">took</li>
             </ul>
         </div>
 
@@ -85,10 +85,10 @@
         </div>
         <div class="choices2">
             <ul>
-                <li class="pilihan" onclick="checkAnswer(this)">Apple</li>
-                <li class="pilihan" onclick="checkAnswer(this)">Orange</li>
-                <li class="pilihan" onclick="checkAnswer(this)">Papaya</li>
-                <li class="pilihan" onclick="checkAnswer(this)">Melon</li>
+                <li class="pilihan2" onclick="checkAnswer(this)">Apple</li>
+                <li class="pilihan2" onclick="checkAnswer(this)">Orange</li>
+                <li class="pilihan2" onclick="checkAnswer(this)">Papaya</li>
+                <li class="pilihan2" onclick="checkAnswer(this)">Melon</li>
             </ul>
         </div>
 
@@ -97,10 +97,10 @@
         </div>
         <div class="choices3">
             <ul>
-                <li class="pilihan" onclick="checkAnswer(this)">Riden</li>
-                <li class="pilihan" onclick="checkAnswer(this)">Riden</li>
-                <li class="pilihan" onclick="checkAnswer(this)">Rided</li>
-                <li class="pilihan" onclick="checkAnswer(this)">Riding</li>
+                <li class="pilihan3" onclick="checkAnswer(this)">Riden</li>
+                <li class="pilihan3" onclick="checkAnswer(this)">Riden</li>
+                <li class="pilihan3" onclick="checkAnswer(this)">Rided</li>
+                <li class="pilihan3" onclick="checkAnswer(this)">Riding</li>
             </ul>
         </div>
 
@@ -109,36 +109,51 @@
         </div>
         <div class="choices4">
             <ul>
-                <li class="pilihan" onclick="checkAnswer(this)">eat, going</li>
-                <li class="pilihan" onclick="checkAnswer(this)">drink, goes</li>
-                <li class="pilihan" onclick="checkAnswer(this)">eat, goes</li>
-                <li class="pilihan" onclick="checkAnswer(this)">drink, going</li>
+                <li class="pilihan4" onclick="checkAnswer(this)">eat, going</li>
+                <li class="pilihan4" onclick="checkAnswer(this)">drink, goes</li>
+                <li class="pilihan4" onclick="checkAnswer(this)">eat, goes</li>
+                <li class="pilihan4" onclick="checkAnswer(this)">drink, going</li>
             </ul>
         </div>
 
         <div class="mall">
-            <h1>After I went to school, I ___ to go to a ___ with my friends.</h1>
+            <h1>After I went to school, I ___ go to a ___ with my friends.</h1>
         </div>
         <div class="choices5">
             <ul>
-                <li class="pilihan" onclick="checkAnswer(this)">used, mall</li>
-                <li class="pilihan" onclick="checkAnswer(this)">usually, mall</li>
-                <li class="pilihan" onclick="checkAnswer(this)">drink, home</li>
-                <li class="pilihan" onclick="checkAnswer(this)">used, toilet</li>
+                <li class="pilihan5" onclick="checkAnswer(this)">used, mall</li>
+                <li class="pilihan5" onclick="checkAnswer(this)">usually, mall</li>
+                <li class="pilihan5" onclick="checkAnswer(this)">drink, home</li>
+                <li class="pilihan5" onclick="checkAnswer(this)">used, toilet</li>
             </ul>
         </div>
         
         <div class="cafe">
-            <h1>Yesterday I ___ to cafe.</h1>
+            <h1>Yesterday, I ___ to a cafe with my friends.</h1>
         </div>
-        <div class="choices5">
+        <div class="choices6">
             <ul>
-                <li class="pilihan" onclick="checkAnswer(this)">went</li>
-                <li class="pilihan" onclick="checkAnswer(this)">go</li>
-                <li class="pilihan" onclick="checkAnswer(this)">going</li>
-                <li class="pilihan" onclick="checkAnswer(this)">into</li>
+                <li class="pilihan6" onclick="checkAnswer(this)">went</li>
+                <li class="pilihan6" onclick="checkAnswer(this)">go</li>
+                <li class="pilihan6" onclick="checkAnswer(this)">goes</li>
+                <li class="pilihan6" onclick="checkAnswer(this)">were</li>
             </ul>
         </div>
+    </div>
+
+    <div class="bonus">
+        <h1>💡 BONUS ROUND 💡</h1>
+        <p>Please Ranked Your Most Used Tense!</p>
+        <div class="bonus-q">
+            <ul id="draggable-list">
+                <li class="draggable" draggable="true">Simple Present Tense</li>
+                <li class="draggable" draggable="true">Past Tense</li>
+                <li class="draggable" draggable="true">Future Present Tense</li>
+                <li class="draggable" draggable="true">Past Perfect Tense</li>
+                <li class="draggable" draggable="true">Future Continuous Tense</li>
+            </ul>
+        </div>
+    </div>
     </div>
 
     <div class="notification" id="notification">Correct Answer!</div>

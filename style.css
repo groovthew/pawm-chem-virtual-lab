@@ -95,7 +95,8 @@ nav.shadow {
 
 .nav-menu .nav-list .nav_menu_list {
     list-style: none;
-    position: relative;
+    position: absolute;
+
 }
 
 .nav-link {
@@ -131,25 +132,24 @@ nav.shadow {
 .nav-menu-btn i {
     font-size: 28px;
     cursor: pointer;
+    pointer-events: auto;
 }
 
 
 .profile {
     width: 66px;
     height: 62px;
-    flex-shrink: 0;
-    display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
     top: 20px;
-    right: 40px;
+    right: 0px;
 }
 
 .profile-logo {
     width: 70px;
     height: 70px;
     border-radius: 50%;
+    margin-left: 120%;
 }
 
 .login {
@@ -167,83 +167,91 @@ nav.shadow {
     color: white;
 }
 
-.hamburger {
-    display: none; /* Hidden on large screens */
-    font-size: 28px;
-    cursor: pointer;
-    color: whitesmoke;
-}
-
-@media (max-width: 1024px) {
-    .hamburger{
-        display: block;
-    }
-
-    nav {
-        padding: 0 30px;
-        height: 80px;
-    }
-
+@media (max-width: 1024px) { 
     .nav-name {
-        font-size: 26px;
-    }
-
-    .nav-logo span {
-        font-size: 4em;
-        top: -10px;
-        right: -20px;
+        font-size: 24px; 
     }
 
     .nav-link {
-        padding-inline: 15px;
-        margin-inline: 15px;
+        padding-inline: 10px; 
+        margin-inline: 10px; 
     }
 
-    .login {
-        padding: 10px 15px;
-    }
-}
+    /* .profile {
+        top: 15px; 
+        right: 20px; 
+    } */
 
-@media (max-width: 950px) {
-    /* Hide the menu and show hamburger icon */
-
-
-    .hamburger {
-        display: block;
-        margin-left: auto;
-        margin-right: 10px; /* Position the hamburger to the right */
+    .profile {
+        width: 50px;
+        height: 50px; 
+        right: 0px; 
     }
 
-    /* Fix layout issues */
-    nav {
-        padding: 0 20px;
-        height: auto;
-    }
-
-    .nav-logo span {
-        font-size: 4em;
-    }
-}
-
-@media (max-width: 300px) {
-    .nav-menu{
+    .profile-logo {
         display: none;
     }
-    .nav-name {
-        font-size: 20px;
+}
+
+@media (max-width: 768px) { /* Smartphone */
+    nav {
+        padding: 0 20px; 
+        height: 70px; 
     }
 
-    .hamburger {
-        font-size: 2em;
+    .nav-name {
+        font-size: 20px; 
+    }
+
+    .nav-link {
+        padding-inline: 8px; /* Padding lebih kecil */
+        margin-inline: 5px;
+        padding-right: 0;
     }
 
     .login {
-        padding: 6px 10px;
-        font-size: 12px;
+        padding: 10px 15px; 
+        font-size: 14px; /* Ukuran font lebih kecil */
+    }
+
+    .profile {
+        width: 50px;
+        height: 50px; 
+        right: 0px; 
+    }
+
+    .profile-logo {
+        display: none;
     }
 }
 
-/* Show the menu when hamburger is clicked */
+@media (max-width: 480px) { /* Smartphone Kecil */
+    nav {
+        padding: 0 10px;
+        height: 60px;
+
+    }
+
+    .nav-name {
+        font-size: 18px; /* Ukuran font lebih kecil */
+    }
+
+    .nav-link {
+        padding-inline: 5px; /* Padding lebih kecil */
+        margin-inline: 3px; /* Margin lebih kecil */
+        margin-left: 50%;
+    }
+
+    .login {
+        padding: 8px 40px; /* Padding lebih kecil */
+        font-size: 12px; /* Ukuran font lebih kecil */
+    }
+
+    .profile-logo {
+        display: none;
+    }
+}
+
 .show-menu {
     display: flex;
     flex-direction: column;
@@ -344,7 +352,7 @@ button[type="submit"]:hover {
 
 .intro-me {
     width: 800px;
-    height: 1000px;
+    height: 990px;
     margin-top: -20px;
     justify-content: center;
     margin-left: -110px;
@@ -386,15 +394,47 @@ button[type="submit"]:hover {
     font-size: 25px;
     font-style: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    pointer-events: auto;
+    position: absolute;
 }
 
 .btn-start:hover {
     background-color: #c00;
 }
 
+@media (max-width: 768px) {
+    .intro-me {
+        width:600px;
+    }
+
+    .intro img {
+        opacity: 8%;
+    }
+
+    .title h1 {
+        font-size: 10vw; 
+        margin-right: 3%; /* Mengurangi margin kanan */
+        text-align: center;
+        padding-top: 15%
+    }
+
+    .title p {
+        font-size: 4vw;
+        text-align: center;
+        margin-left: 10%;
+        margin-top: 1px;
+    }
+
+    .btn-start {
+        font-size: 5vw; /* Ukuran font lebih kecil di mobile */
+        opacity: 100%;
+    }
+}
+
 .butterfly{
     text-align:center;
-    font-size: 70px;
+    font-size: 100px;
+    margin-bottom: 10px;
     margin-top: 350px;
 }
 
@@ -520,6 +560,24 @@ button[type="submit"]:hover {
     box-shadow: 0 8px 16px rgba(255, 0, 0, 0.6); 
 }
 
+@media (max-width: 768px) {
+    .tpb, .english {
+        width: 100%; 
+        margin-bottom: 30px; 
+        text-align: center;
+    }
+
+    .tpb p, .english p {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .tpb h1, .english h1 {
+        font-size: 24px; /* Mengurangi ukuran font judul */
+        text-align: center;
+    }
+}
+
 .quiz-modal {
     display: none; 
     position: fixed; 
@@ -582,8 +640,17 @@ button[type="submit"]:hover {
     width: auto;
     max-height: 400px;
 }
-.past-tense {
-    justify-content: center;
+
+@media (max-width: 600px) {
+    .quiz h1 {
+        font-size: 7vw;
+        margin-top: 10%;
+    }
+
+    .idea img {
+        max-width: 55%;
+        height: auto;
+    }
 }
 
 .question-box {
@@ -593,13 +660,19 @@ button[type="submit"]:hover {
     margin-bottom: 10%;
 }
 
-.choices ul, .choices2, .choices3, .choices4, .choices5 ul {
+.choices ul, .choices2 ul, .choices3 ul, .choices4 ul, .choices5 ul {
     list-style: none;
     padding: 0;
     margin-top: 25px;
 }
 
-.pilihan, .pilihan2, .pilihan3, .pilihan4, .pilihan5 {
+.choices6 ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.pilihan, .pilihan2, .pilihan3, .pilihan4, .pilihan5, .pilihan6 {
     list-style: none;
     padding: 10px;
     margin-bottom: 10px;
@@ -616,8 +689,15 @@ button[type="submit"]:hover {
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.pilihan:hover, .pilihan2:hover {
-    background-color: red; 
+.pilihan:hover, .pilihan2:hover, .pilihan3:hover, .pilihan4:hover, .pilihan5:hover {
+    background-color: white;
+    color:#f00;
+    transform: scale(1.025);
+}
+
+.pilihan6:hover {
+    background-color: white;
+    color:#f00;
     transform: scale(1.025);
 }
 
@@ -627,8 +707,8 @@ button[type="submit"]:hover {
 }
 
 .wrong {
-    background-color: white !important;
-    color: red !important;
+    background-color: red!important;
+    color: white !important;
 }
 
 .notification {
@@ -647,13 +727,91 @@ button[type="submit"]:hover {
     margin-top: 10px;
 }
 
+.ride {
+    padding-top: 5%;
+    margin-top: 10px;
+}
 
+.milk {
+    padding-top: 5%;
+    margin-top: 10px;
+}
+
+.mall {
+    padding-top: 5%;
+    margin-top: 10px;
+}
+
+.cafe {
+    padding-top: 5%;
+    margin-top: 10px;
+}
+
+.past-tense {
+    justify-content: center;
+}
+
+.bonus {
+    text-align: center;
+    margin: 20px;
+}
+
+.bonus h1 {
+    font-size: 60px;
+    margin-bottom: 5%;
+}
+
+.bonus p {
+    font-size: 20px;
+    margin-bottom: 3%;
+    font-weight: bold;
+}
+
+.bonus-q {
+    display: inline-block;
+    border: 3px solid #ccc;
+    padding: 40px;
+    border-radius: 5px;
+    width: 1000px;
+}
+
+#draggable-list {
+    list-style: none;
+    padding: 0;
+    color: black;
+}
+
+.draggable {
+    padding: 20px;
+    margin: 5px;
+    background-color: #c0ffb5;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    cursor: move;
+    user-select: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.draggable:hover {
+    background-color: #f91f1f;
+    color: white;
+    transform: scale(1.07);
+}
+
+.dragging {
+    background-color: #d0e8ff; 
+    transform: scale(1.05); 
+}
+
+.drag-over {
+    border: 2px dashed #666;
+}
 
 @media screen and (max-width: 600px) {
 
     .question-box {
         padding: 15px;
-        font-size: 14px; /* Reduce font size on smaller screens */
+        font-size: 14px; 
     }
 
     .question {
@@ -663,46 +821,197 @@ button[type="submit"]:hover {
     .choices label {
         font-size: 14px;
     }
-
-    .submit {
-        font-size: 14px;
-        padding: 10px 15px; /* Reduce button size on smaller screens */
-    }
-
-    .result {
-        font-size: 14px;
-    }
 }
 
 @media screen and (max-width: 768px) {
     .quiz h1 {
-        font-size: 36px; /* Reduce font size for smaller screens */
-        padding-top: 5%; /* Reduce padding on smaller screens */
+        font-size: 36px; 
+        padding-top: 5%; 
     }
 
     .idea {
-        height: auto; /* Let content flow naturally on small screens */
+        height: auto; 
     }
 
     .idea img {
-        max-height: 300px; /* Scale image for smaller screens */
-        width: 100%; /* Ensure the image takes up the available width */
-        height: auto; /* Maintain aspect ratio */
+        max-height: 300px; 
+        width: 100%; 
+        height: auto; 
     }
 }
 
-/* Media query for smaller mobile screens (less than 480px) */
+
 @media screen and (max-width: 480px) {
     .quiz h1 {
-        font-size: 28px; /* Further reduce font size on very small screens */
-        padding-top: 5%; /* Adjust padding */
+        font-size: 28px; 
+        padding-top: 5%; 
     }
 
     .idea img {
-        max-height: 200px; /* Limit image size further for smaller mobile screens */
+        max-height: 200px; 
     }
 }
 
+.head-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
 
+.head-title h1 {
+    padding-top: 10%;
+    font-size: 50px;
+    line-height: 1.2;
+}
 
+.chapter-1{
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
 
+.chapter-1 h2 {
+    text-align: center;
+    font-size: 40px;
+    padding-top: 5%;
+    padding-bottom: 2%;
+    text-shadow: 
+    1px 1px 0 brown,   /* Stroke coklat ke kanan bawah */
+    -1px -1px 0 brown, /* Stroke coklat ke kiri atas */
+    -1px 1px 0 brown,  /* Stroke coklat ke kiri bawah */
+    1px -1px 0 brown;  /* Stroke coklat ke kanan atas */
+}
+
+.chapter-1 p {
+    font-size: 20px;
+    text-align: center;
+    margin-right: 10%;
+    margin-left: 10%;
+    padding: 2px 20px;
+    color: black;
+    background-color: rgb(255, 255, 212);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 0, 0.5);
+}
+
+.chapter-2 h2 {
+    text-align: center;
+    font-size: 40px;
+    padding-top: 5%;
+    padding-bottom: 2%;
+    text-shadow: 
+    1px 1px 0 brown,   /* Stroke coklat ke kanan bawah */
+    -1px -1px 0 brown, /* Stroke coklat ke kiri atas */
+    -1px 1px 0 brown,  /* Stroke coklat ke kiri bawah */
+    1px -1px 0 brown;  /* Stroke coklat ke kanan atas */
+}
+
+.chapter-2 p {
+    font-size: 20px;
+    text-align: center;
+    margin-right: 10%;
+    margin-left: 10%;
+    padding: 2px 20px;
+    color: black;
+    background-color: rgb(255, 255, 212);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 0, 0.5);
+}
+
+.chapter-3 h2 {
+    text-align: center;
+    font-size: 40px;
+    padding-top: 5%;
+    padding-bottom: 2%;
+    text-shadow: 
+    1px 1px 0 brown,   /* Stroke coklat ke kanan bawah */
+    -1px -1px 0 brown, /* Stroke coklat ke kiri atas */
+    -1px 1px 0 brown,  /* Stroke coklat ke kiri bawah */
+    1px -1px 0 brown;  /* Stroke coklat ke kanan atas */
+}
+
+.chapter-3 p {
+    font-size: 20px;
+    text-align: center;
+    margin-right: 10%;
+    margin-left: 10%;
+    padding: 2px 20px;
+    color: black;
+    background-color: rgb(255, 255, 212);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 0, 0.5);
+}
+
+.chapter-4 h2 {
+    text-align: center;
+    font-size: 40px;
+    padding-top: 5%;
+    padding-bottom: 2%;
+    text-shadow: 
+    1px 1px 0 brown,   /* Stroke coklat ke kanan bawah */
+    -1px -1px 0 brown, /* Stroke coklat ke kiri atas */
+    -1px 1px 0 brown,  /* Stroke coklat ke kiri bawah */
+    1px -1px 0 brown;  /* Stroke coklat ke kanan atas */
+}
+
+.chapter-4 p {
+    font-size: 20px;
+    text-align: center;
+    margin-right: 10%;
+    margin-left: 10%;
+    padding: 2px 20px;
+    color: black;
+    background-color: rgb(255, 255, 212);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 0, 0.5);
+}
+
+.chapter-5 h2 {
+    text-align: center;
+    font-size: 40px;
+    padding-top: 5%;
+    padding-bottom: 2%;
+    text-shadow: 
+    1px 1px 0 brown,   /* Stroke coklat ke kanan bawah */
+    -1px -1px 0 brown, /* Stroke coklat ke kiri atas */
+    -1px 1px 0 brown,  /* Stroke coklat ke kiri bawah */
+    1px -1px 0 brown;  /* Stroke coklat ke kanan atas */
+}
+
+.chapter-5 p {
+    font-size: 20px;
+    text-align: center;
+    margin-right: 10%;
+    margin-left: 10%;
+    padding: 2px 20px;
+    color: black;
+    background-color: rgb(255, 255, 212);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 0, 0.5);
+    margin-bottom: 10%;
+}
+
+.ready {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.heart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    padding: 10px;
+ }
+ 
+ .heart img {
+     max-width: 120%;
+     height: auto;
+     width: auto;
+     max-height: 400px;
+     padding-top: 40px;
+ }
