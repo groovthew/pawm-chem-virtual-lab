@@ -167,6 +167,63 @@ nav.shadow {
     color: white;
 }
 
+/* Menyembunyikan dan menampilkan tombol Login/Logout */
+#loginLink {
+    display: block; /* Tampilkan Login jika belum login */
+}
+
+#userDisplay {
+    display: none; /* Sembunyikan user info jika belum login */
+}
+
+#userDisplay a {
+    color: #ff4d4d; /* Warna tombol logout */
+    text-decoration: none;
+    padding: 8px 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#userDisplay a:hover {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+#loginLink a {
+    color: #007bff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#loginLink a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Style untuk teks sambutan pengguna setelah login */
+#welcomeMessage {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+}
+
+/* Responsif untuk tampilan kecil */
+@media (max-width: 768px) {
+    .nav_menu_list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #userDisplay a {
+        margin-top: 10px;
+    }
+}
+
 @media (max-width: 1024px) { 
     .nav-name {
         font-size: 24px; 
@@ -1023,13 +1080,14 @@ button[type="submit"]:hover {
     justify-content: center;
     align-items: center;
     height: calc(100vh - 100px);
+    margin-top: 0%;
 }
 
 .form-container {
     background-color: #1e1e1e;
     padding: 30px;
     border-radius: 10px;
-    width: 400px;
+    width: 800px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
@@ -1050,10 +1108,10 @@ button[type="submit"]:hover {
 .form-container h2 {
     margin-bottom: 20px;
     color: #ff0000;
+    font-size: 40px;
 }
 
 .form-container label {
-    display: block;
     text-align: left;
     margin-bottom: 5px;
 }
@@ -1077,6 +1135,7 @@ button[type="submit"]:hover {
     color: white;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 10%;
 }
 
 .form-container .btn:hover {
@@ -1111,6 +1170,7 @@ button[type="submit"]:hover {
     width: 350px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
+    margin-top: 7%;
 }
 
 .form-container h2 {

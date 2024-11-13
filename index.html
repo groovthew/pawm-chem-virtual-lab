@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="container"> 
+    <div class="container">
         <nav id="header">
             <div class="nav-logo">
                 <p class="nav-name">Matty's</p>
@@ -33,13 +33,24 @@
                             <div class="circle"></div>
                         </li>    
                         <li class="nav_list">
-                            <a href="login.html" class="nav-link">Login</a>
+                            <a href="login.html" class="nav-link" id="loginLink">Login</a>
                             <div class="circle"></div>
-                        </li>           
+                        </li>  
+                        <li class="nav_list" id="userDisplay" style="display: none;">
+                            <span id="welcomeMessage"></span>
+                            <div class="circle"></div>
+                        </li>  
+                        <li class="nav_list" id="userDisplay" style="display: none;">
+                            <span id="welcomeMessage"></span>
+                            <a href="#" onclick="logout()">Logout</a>
+                            <div class="circle"></div>
+                        </li>
                     </ul>
                 </div>
+            </div>
         </nav>
     </div>
+    
 
     <div class="intro">
         <img src="assets/me1.png" alt="Intro1" class="intro-me">
