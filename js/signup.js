@@ -1,42 +1,49 @@
-function signUpUser(event) {
-    event.preventDefault(); // Mencegah reload halaman
+const backendUrl = 'http://localhost:3000/api';
+console.log({ email, password }); // Log data sebelum dikirim
 
+function signUpUser(event) {
+    event.preventDefault(); // Mencegah halaman reload
+
+    const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
     const confirmPassword = document.getElementById('confirm-password').value.trim();
 
-    // Ambil data pengguna dari localStorage atau buat array kosong jika belum ada
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-
-    // Validasi Input Kosong
-    if (!email || !password || !confirmPassword) {
+    // Validasi input
+    if (!name || !email || !password || !confirmPassword) {
         alert('All fields are required.');
         return;
     }
 
-    // Validasi Panjang Password
     if (password.length < 6) {
         alert('Password must be at least 6 characters long.');
         return;
     }
 
-    // Validasi Password dan Confirm Password
     if (password !== confirmPassword) {
         alert('Passwords do not match.');
         return;
     }
 
-    // Cek Apakah Email Sudah Terdaftar
-    if (users.some((user) => user.email === email)) {
-        alert('This email is already registered.');
-        return;
-    }
-
-    // Simpan Pengguna Baru
-    users.push({ email, password });
-    localStorage.setItem('users', JSON.stringify(users));
-    alert('Sign Up successful! Please log in.');
-
-    // Redirect ke Halaman Login
-    window.location.href = 'login.html';
+    // Kirim data ke server
+    fetch(`${backendUrl}/signup`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, password }),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.success) {
+                alert('Sign up successful! Please log in.');
+                window.location.href = 'login.html'; // Redirect ke halaman login
+            } else {
+                alert(data.message); // Tampilkan pesan error dari server
+            }
+        })
+        .catch((error) => {
+            console.error('Error during sign up:', error);
+            alert('An error occurred. Please try again later.');
+        });
 }
