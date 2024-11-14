@@ -35,9 +35,6 @@ const signup = async (req, res) => {
     }
 };
 
-
-
-
 // Login
 const login = async (req, res) => {
     try {

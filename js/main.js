@@ -75,7 +75,6 @@ function updateNavbarAfterLogin(email) {
     }
 }
 
-// Periksa apakah pengguna sudah login saat halaman dimuat
 window.onload = function() {
     const loggedInUser = localStorage.getItem('loggedInUser');
     if (loggedInUser) {
@@ -102,6 +101,22 @@ function logout() {
     alert('You have been logged out!');
     window.location.href = 'index.html'; // Redirect ke halaman utama setelah logout
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Periksa apakah pengguna sudah login
+    const token = localStorage.getItem('authToken');
+    const userName = localStorage.getItem('userName'); // Simpan userName saat login
+
+    if (token && userName) {
+        // Sembunyikan tombol login
+        document.getElementById('loginLink').style.display = 'none';
+
+        // Tampilkan nama pengguna dan tombol logout
+        document.getElementById('userInfo').style.display = 'inline-block';
+        document.getElementById('userName').textContent = `Hi, ${userName}`;
+    }
+});
+
 
 
 /* HANDLE QUIZ MODAL */
