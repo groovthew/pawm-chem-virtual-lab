@@ -55,11 +55,13 @@ const login = async (req, res) => {
         // Buat token JWT
         const token = jwt.sign({ userId: user._id }, 'your_secret_key', { expiresIn: '1h' });
 
-        res.json({ success: true, token });
+        res.json({ success: true, token, name: user.name });
+
     } catch (err) {
         console.error('Error during login:', err);
         res.status(500).json({ success: false, message: 'Internal Server Error' });
     }
 };
+console.log('Login User Name:', user.name);
 
 module.exports = { signup, login };

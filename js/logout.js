@@ -1,10 +1,14 @@
 function logout() {
-    // Menghapus token dari localStorage
+    // Hapus token dan nama pengguna dari localStorage
     localStorage.removeItem('authToken');
-    alert("You have been logged out.");
-    window.location.href = "login.html"; // Redirect ke halaman login
+    localStorage.removeItem('name');
+
+    // Redirect ke halaman login setelah logout
+    alert('You have been logged out.');
+    window.location.href = 'index.html'; // Arahkan kembali ke halaman utama (index.html)
 }
 
 function cancelLogout() {
-    window.location.href = "index.html"; // Redirect ke halaman home
+    // Redirect kembali ke halaman utama atau sebelumnya
+    window.location.href = 'index.html'; // Halaman utama
 }

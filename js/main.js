@@ -102,21 +102,6 @@ function logout() {
     window.location.href = 'index.html'; // Redirect ke halaman utama setelah logout
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Periksa apakah pengguna sudah login
-    const token = localStorage.getItem('authToken');
-    const userName = localStorage.getItem('userName'); // Simpan userName saat login
-
-    if (token && userName) {
-        // Sembunyikan tombol login
-        document.getElementById('loginLink').style.display = 'none';
-
-        // Tampilkan nama pengguna dan tombol logout
-        document.getElementById('userInfo').style.display = 'inline-block';
-        document.getElementById('userName').textContent = `Hi, ${userName}`;
-    }
-});
-
 
 
 /* HANDLE QUIZ MODAL */

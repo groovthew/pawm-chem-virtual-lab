@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn With Matty!</title>
     <link rel="stylesheet" href="style.css">
-
-    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 </head>
 
@@ -33,21 +31,21 @@
                             <a href="quiz.html" class="nav-link">Quiz</a>
                             <div class="circle"></div>
                         </li>
-                        <li class="nav_list" id="loginLink">
-                            <a href="login.html" class="nav-link">Login</a>
-                            <div class="circle"></div>
-                        </li>
-                        <li class="nav_list" id="userInfo" style="display: none;">
-                            <span id="userName"></span>
-                            <a href="logout.html" class="nav-link" onclick="logout()">Logout</a>
-                            <div class="circle"></div>
-                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </div>
 
     <div class="quiz">
         <h1>Welcome to Quiz Page</h1>
     </div>
+
+    <div class="previous-score">
+        <h2>Your Previous Score:</h2>
+        <p class="score-value" id="previousScore">Loading...</p>
+    </div>
+    
 
     <div class="idea">
         <img src="assets/quiz-1.png">
@@ -143,8 +141,12 @@
     </div>
 
     <div class="notification" id="notification">Correct Answer!</div>
+    <button id="submitQuiz">Submit Quiz</button>
+
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/quiz.js"></script>
     <script src="js/main.js"></script>
+    <script src="result.html"></script>
 </body>
+</html>

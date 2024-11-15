@@ -767,6 +767,13 @@ button[type="submit"]:hover {
    padding: 10px;
 }
 
+.score-display {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+
 .idea img {
     max-width: 100%;
     height: auto;
@@ -1299,3 +1306,76 @@ button[type="submit"]:hover {
     text-decoration: underline;
 }
 
+/* Styling untuk tombol submit di quiz.html */
+#submitQuiz {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+#submitQuiz:hover {
+    background-color: #45a049;
+}
+
+/* Styling untuk result page */
+.result-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.result-container h1 {
+    font-size: 2em;
+    color: red;
+}
+
+.result-container p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.correct {
+    background-color: #4CAF50; /* Warna hijau untuk jawaban benar */
+    color: white;
+}
+
+.wrong {
+    background-color: #F44336; /* Warna merah untuk jawaban salah */
+    color: white;
+}
+
+.previous-score {
+    background-color: #333; 
+    border: 2px solid #ff3333; 
+    border-radius: 10px; 
+    padding: 20px; 
+    margin: 20px auto; 
+    width: 80%; 
+    text-align: center; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    color: white; 
+}
+
+.previous-score h2 {
+    font-size: 1.5rem; 
+    color: white; 
+    font-weight: bold; 
+    margin: 0; 
+}
+
+.previous-score .score-value {
+    font-size: 2rem; 
+    color: #ff3333; 
+    font-weight: bold;
+}

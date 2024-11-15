@@ -1,4 +1,4 @@
-const backendUrl = 'http://localhost:3000/api';
+const backendUrl = 'http://localhost:3000/';
 
 function signUpUser(event) {
     event.preventDefault(); // Mencegah halaman reload
@@ -29,7 +29,7 @@ function signUpUser(event) {
     }
 
     // Kirim data ke server
-    fetch(`${backendUrl}/signup`, {
+    fetch("http://localhost:3000/api/signup", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

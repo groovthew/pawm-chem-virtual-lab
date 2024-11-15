@@ -41,12 +41,11 @@
                             <a href="logout.html" class="nav-link" onclick="logout()">Logout</a>
                             <div class="circle"></div>
                         </li>
-                        
                     </ul>
                 </div>
             </div>
-            
         </nav>
+        
     </div>
     
 
@@ -102,10 +101,43 @@
         </div>
     </div>    
 
-
-
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ambil token dan nama pengguna dari localStorage
+            const authToken = localStorage.getItem('authToken');
+            const name = localStorage.getItem('name');
+    
+            // Elemen DOM untuk navigasi
+            const loginLink = document.getElementById('loginLink');
+            const userInfo = document.getElementById('userInfo');
+            const userNameElement = document.getElementById('userName');
+    
+            if (authToken) {
+                // Jika user sudah login
+                loginLink.style.display = 'none'; // Sembunyikan login
+                userInfo.style.display = 'block'; // Tampilkan user info
+                userNameElement.textContent = `Welcome, ${name || 'User'}`;
+            } else {
+                // Jika user belum login
+                loginLink.style.display = 'block'; // Tampilkan login
+                userInfo.style.display = 'none'; // Sembunyikan user info
+                alert('You need to login to access this page.');
+                window.location.href = 'login.html'; // Redirect ke halaman login
+            }
+        });
+    
+        function logout() {
+            // Hapus data di localStorage dan redirect ke login
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('name');
+            alert('You have been logged out.');
+            window.location.href = 'login.html';
+        }
+    </script>
+    
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/main.js"></script>
+    <script src="js/logout.js"></script>
 </body>
 </html>
